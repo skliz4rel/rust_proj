@@ -1,0 +1,37 @@
+Memorhy management is crucial aspect of programming in Rust. designed to ensure safety and efficiency without the need for garbage collector.
+Not having a garbage collector is one of the reasons rust is so fast.
+
+it achieves this using the
+
+1. Mutability  
+   Keep all variables immutable except u need it mutable.
+
+2. Heap and Stacks
+3. Ownership model
+4. Borrowing and references.
+5. Lifetimes.
+
+What is Ownership ?
+Ownership is a set of rules that govern how a Rust program manages memory. All programs have to manage the way they use a computers memory while running. Some languages like Java use Gabage collectors. Memory is managed through a system of ownership with a set of rules that the compiler checks. If any of the rules are violated, the program wont compile. None of the features of the ownership will slow down your program while its running.
+
+dangling pointers are pointers pointing to a value in the heap that has been deallocated.
+
+When you put someting on the heap it has an owner on the stack which is a pointer that references that heap object.
+It can only have one owner at a time. When the owner on the stack goes out of scope the heap object is cleared out of the memory.
+
+References
+References mean giving the address of a string rather than the ownership of the string over to a function.
+
+NOTE
+You can only have one mutable reference.
+You can have multiple immutable references.
+
+This is to prevent Race conditions and data inconsistency when application is running in rust.
+
+LIFETIMES
+
+Structs
+Help you create object like values in javascript.It helps create structured data.
+They are close to class in javascript
+
+Enums
